@@ -7,10 +7,10 @@ public class Expense {
     private double amount;
     private LocalDate date;
 
-    public Expense(String description, double amount, LocalDate date) {
+    public Expense(String description, double amount) {
         this.description = description;
         this.amount = amount;
-        this.date = date;
+        this.date = LocalDate.now();
     }
 
     public String getDescription() {
