@@ -11,4 +11,20 @@ public class ExpenseManager {
         expenses.add(expense);
         System.out.println("Expense added.");
     }
+
+    public void listExpenses(){
+        if(expenses.isEmpty()){
+            System.out.println("No recorded.");
+            return;
+        }
+        System.out.println("---- Expense list ----");
+        for (Object e : expenses){
+            System.out.println(e);
+        }
+    }
+
+    public void totalExpense(){
+        double total = expenses.stream().mapToDouble(Expense::getAmount).sum();
+        System.out.println("Total: " + total);
+    }
 }
